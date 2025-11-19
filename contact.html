@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Angaza Tumaini Mission Center</title>
+    <meta name="description" content="Contact Angaza Tumaini Mission Center. Reach out to volunteer, partner, or support our mission in Kibera, Nairobi.">
+    <link rel="icon" href="filez/logo/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1D4ED8;
+            --color-secondary: #10B981;
+            --color-accent: #FBBF24;
+            --color-dark: #1F2937;
+        }
+        body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+        /* Nav link styling - match main homepage */
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: 700;
+            transition: color 0.3s ease;
+            padding-bottom: 8px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color-accent);
+            transition: width 0.3s ease-out;
+            border-radius: 9999px;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover { color: var(--color-dark); }
+        /* Fancy hero for contact page */
+        .contact-hero {
+            background: radial-gradient( circle at 10% 10%, rgba(29,78,216,0.12), transparent 20%),
+                        radial-gradient( circle at 90% 90%, rgba(16,185,129,0.08), transparent 20% ),
+                        linear-gradient(180deg, rgba(29,78,216,0.06), rgba(255,255,255,0.02));
+            border-bottom: 1px solid rgba(29,78,216,0.04);
+        }
+        .glass-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(250,250,255,0.85));
+            backdrop-filter: blur(8px) saturate(140%);
+            -webkit-backdrop-filter: blur(8px) saturate(140%);
+            border: 1px solid rgba(29,78,216,0.06);
+            box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+        }
+        .input-icon { transform: translateY(1px); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="Angaza.html" class="flex items-center gap-3" aria-label="Angaza Tumaini home">
+                <img src="filez/logo/contact logo.jpg" alt="Angaza Tumaini logo" style="height:64px; width:auto; object-fit:contain;" onerror="this.onerror=null;this.src='https://placehold.co/100x40/60A5FA/ffffff?text=ATM'">
+            </a>
+            <nav class="hidden md:flex gap-6 items-center">
+                <a href="Angaza.html#hero-section" class="nav-link">Home</a>
+                <a href="Angaza.html#about" class="nav-link">About Us</a>
+                <a href="Angaza.html#programs" class="nav-link">Our Programs</a>
+                <a href="Angaza.html#impact" class="nav-link">Our Impact</a>
+                <a href="Angaza.html#involved" class="nav-link">Get Involved</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Fancy Hero -->
+        <section class="contact-hero py-20 relative" style="background: linear-gradient(135deg, var(--color-primary) 0%, rgba(29,78,216,0.9) 30%, rgba(16,185,129,0.85) 100%);">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-4 hero-heading">Contact Angaza Tumaini</h1>
+                <p class="text-white max-w-3xl mx-auto">We'd love to hear from you — whether you want to volunteer, partner, donate, or ask a question. Use the form below or send a message directly to <a href="mailto:contact@angazatumaini.org" class="underline" style="color:var(--color-accent)">contact@angazatumaini.org</a>.</p>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 pb-20">
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h2 class="text-2xl font-extrabold mb-2">Get in touch</h2>
+                        <p class="text-gray-600 mb-6">Tell us how you'd like to help or ask any question — we'll respond as soon as possible.</p>
+
+                        <div class="space-y-4 text-sm text-gray-700">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-gray-700 input-icon"></i>
+                                <div>
+                                    <div class="font-semibold">Email</div>
+                                    <div class="text-gray-600">contact@angazatumaini.org</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-gray-700 input-icon"></i>
+                                <div>
+                                    <div class="font-semibold">Phone / WhatsApp</div>
+                                    <div class="text-gray-600">[Phone Placeholder]</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-gray-700 input-icon"></i>
+                                <div>
+                                    <div class="font-semibold">Address</div>
+                                    <div class="text-gray-600">Olympic Estate, Kibera, Nairobi, Kenya</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <!--
+                            Form submission: Using Formspree by default. Replace the action URL
+                            with your Formspree endpoint (e.g. https://formspree.io/f/your_form_id)
+                            after you sign up at https://formspree.io/. The script will attempt
+                            to POST via fetch; on failure it falls back to opening the user's
+                            email client via mailto.
+                        -->
+                        <form id="contact-form" class="space-y-4" action="https://formspree.io/f/mdkbzqvn" method="POST">
+                            <input type="hidden" name="_subject" value="Website contact — Angaza Tumaini">
+                            <input type="hidden" name="_language" value="en">
+                            <input type="hidden" name="_replyto" id="_replyto" />
+                            <!-- Honeypot field: leave empty. Bots often fill all fields; humans won't see this. -->
+                            <input type="text" name="hp_address" id="hp_address" aria-hidden="true" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <label class="block">
+                                    <span class="text-sm font-medium text-gray-700">Full name</span>
+                                        <div class="mt-1 relative rounded-lg">
+                                            <input id="name" name="name" required placeholder="Your full name" aria-label="Full name" class="block w-full pr-10 rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md" />
+                                            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                                <i data-lucide="user" class="w-5 h-5 text-gray-400"></i>
+                                            </div>
+                                        </div>
+                                </label>
+
+                                <label class="block">
+                                    <span class="text-sm font-medium text-gray-700">Email</span>
+                                    <div class="mt-1 relative rounded-lg">
+                                        <input id="email" type="email" name="email" required placeholder="you@example.com" aria-label="Email address" class="block w-full pr-10 rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md" />
+                                        <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                            <i data-lucide="mail" class="w-5 h-5 text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <label class="block">
+                                <span class="text-sm font-medium text-gray-700">Subject</span>
+                                <input id="subject" name="subject" placeholder="Short subject" aria-label="Subject" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md" />
+                            </label>
+
+                            <label class="block">
+                                <span class="text-sm font-medium text-gray-700">Message</span>
+                                <textarea id="message" name="message" rows="5" required placeholder="Write your message here..." aria-label="Message" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md"></textarea>
+                            </label>
+
+                            <div class="flex items-center gap-4">
+                                <button type="submit" class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-white" style="background-color: var(--color-accent); color:var(--color-dark)">Send Message</button>
+                                <button id="mailto-fallback" type="button" class="inline-flex items-center px-4 py-2 rounded-full border font-medium" style="border-color:var(--color-primary); color:var(--color-primary)">Open email</button>
+                            </div>
+
+                            <div id="contact-status" class="text-sm text-green-600 hidden">Message prepared — your email client should open now.</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-8 text-sm text-gray-600">
+            <h3 class="font-semibold">Other ways to reach us</h3>
+            <ul class="mt-2 space-y-1">
+                <li>Email: <a href="mailto:contact@angazatumaini.org" class="text-blue-600 underline">contact@angazatumaini.org</a></li>
+                <li>Phone/WhatsApp: [Phone Placeholder]</li>
+                <li>Address: Olympic Estate, Kibera, Nairobi, Kenya</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">&copy; 2025 Angaza Tumaini Mission Center</div>
+    </footer>
+
+    <script>
+        // Submit the form to the action URL (Formspree recommended).
+        // Falls back to opening the user's mail client if the POST fails.
+                const form = document.getElementById('contact-form');
+                const statusEl = document.getElementById('contact-status');
+                const honeypot = document.getElementById('hp_address');
+
+                /* Optional reCAPTCHA v3 support (server-side verification still required):
+                     - Add your site key below and include the script tag in the page head:
+                         <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
+                     - Set RECAPTCHA_SITE_KEY to your key and change RECAPTCHA_ENABLED to true.
+                 */
+                const RECAPTCHA_SITE_KEY = '';
+                const RECAPTCHA_ENABLED = false;
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim() || 'Contact from website';
+            const message = document.getElementById('message').value.trim();
+
+            // Honeypot check: if filled, treat as spam and stop silently
+            if (honeypot && honeypot.value.trim() !== '') {
+                console.warn('Honeypot triggered — likely bot.');
+                statusEl.classList.remove('hidden');
+                statusEl.style.color = '#B91C1C';
+                statusEl.textContent = 'Submission detected as spam.';
+                return;
+            }
+
+            // keep _replyto in sync for Formspree
+            const replyto = document.getElementById('_replyto');
+            if (replyto) replyto.value = email;
+
+            // Build a FormData object and POST to the form action
+            const formData = new FormData(form);
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('subject', subject);
+            formData.append('message', message);
+
+            // If reCAPTCHA v3 is enabled, execute and append token
+            if (RECAPTCHA_ENABLED && RECAPTCHA_SITE_KEY) {
+                try {
+                    if (!window.grecaptcha) throw new Error('grecaptcha not loaded');
+                    await grecaptcha.ready();
+                    const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' });
+                    formData.append('g-recaptcha-response', token);
+                } catch (rcErr) {
+                    console.warn('reCAPTCHA execution failed:', rcErr);
+                }
+            }
+
+            const action = form.getAttribute('action');
+            try {
+                const resp = await fetch(action, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                });
+                if (resp.ok) {
+                    statusEl.classList.remove('hidden');
+                    statusEl.style.color = '#059669'; // green
+                    statusEl.textContent = 'Thanks — your message was sent successfully.';
+                    form.reset();
+                } else {
+                    const data = await resp.json().catch(() => null);
+                    // If Formspree returns errors, show them, otherwise fallback to mailto
+                    if (data && data.errors) {
+                        statusEl.classList.remove('hidden');
+                        statusEl.style.color = '#D97706';
+                        statusEl.textContent = data.errors.map(err => err.message).join('\n') || 'Submission failed.';
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                }
+            } catch (err) {
+                // Fallback: open mail client
+                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+                const mailto = `mailto:AngazaTumaini.org@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                statusEl.classList.remove('hidden');
+                statusEl.style.color = '#92400E';
+                statusEl.textContent = 'Unable to send directly — opening your email client.';
+                window.location.href = mailto;
+            }
+        });
+
+        // Keep the mailto fallback button working (user can open their mail client manually)
+        document.getElementById('mailto-fallback').addEventListener('click', function() {
+            const subject = document.getElementById('subject').value.trim() || 'Contact from website';
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+            const mailto = `mailto:AngazaTumaini.org@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+            window.location.href = mailto;
+        });
+    </script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
