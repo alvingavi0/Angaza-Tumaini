@@ -12,6 +12,23 @@
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <!-- Load Poppins font for headings/name visibility -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Preload critical hero image(s) to reduce initial perceived lag -->
+    <link rel="preload" as="image" href="filez/6-29.jpg">
+    <link rel="preload" as="image" href="filez/6-16.jpg">
+    <link rel="preload" as="image" href="filez/Joram.jpg">
+
+    <!-- Kick off early image loading for hero slides (non-blocking) -->
+    <script>
+        (function(){
+            try {
+                var imgs = ['filez/6-29.jpg','filez/6-27.jpg','filez/6-28.jpg','filez/6-16.jpg'];
+                for (var i=0;i<imgs.length;i++){
+                    var im = new Image();
+                    im.src = imgs[i];
+                }
+            } catch(e) { /* no-op */ }
+        })();
+    </script>
     <style>
         /* Custom Styles for a High-End Look */
         :root {
