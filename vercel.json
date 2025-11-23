@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/Angaza.html" }
+    { "source": "/", "destination": "/index.html" }
   ],
   "cleanUrls": true
 }
