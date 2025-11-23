@@ -660,6 +660,97 @@
                 </div>
             </div>
         </section>
+        <!-- 7. Contact Section (embedded) -->
+        <section id="contact" class="contact-hero py-20 relative" style="background: linear-gradient(135deg, var(--color-primary) 0%, rgba(29,78,216,0.9) 30%, rgba(16,185,129,0.85) 100%);">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 hero-heading">Contact Angaza Tumaini</h2>
+                <p class="text-white max-w-3xl mx-auto">We'd love to hear from you — whether you want to volunteer, partner, donate, or ask a question. Use the form below or send a message directly to <a href="mailto:contact@angazatumaini.org" class="underline" style="color:var(--color-accent)">contact@angazatumaini.org</a>.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pb-12">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                        <div>
+                            <h3 class="text-2xl font-extrabold mb-2">Get in touch</h3>
+                            <p class="text-gray-200 mb-6">Tell us how you'd like to help or ask any question — we'll respond as soon as possible.</p>
+
+                            <div class="space-y-4 text-sm text-gray-200">
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="mail" class="w-5 h-5 text-gray-200 input-icon"></i>
+                                    <div>
+                                        <div class="font-semibold">Email</div>
+                                        <div class="text-gray-200">contact@angazatumaini.org</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="phone" class="w-5 h-5 text-gray-200 input-icon"></i>
+                                    <div>
+                                        <div class="font-semibold">Phone / WhatsApp</div>
+                                        <div class="text-gray-200">[Phone Placeholder]</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-gray-200 input-icon"></i>
+                                    <div>
+                                        <div class="font-semibold">Address</div>
+                                        <div class="text-gray-200">Olympic Estate, Kibera, Nairobi, Kenya</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <form id="contact-form" class="space-y-4" action="https://formspree.io/f/mdkbzqvn" method="POST">
+                                <input type="hidden" name="_subject" value="Website contact — Angaza Tumaini">
+                                <input type="hidden" name="_language" value="en">
+                                <input type="hidden" name="_replyto" id="_replyto" />
+                                <input type="text" name="hp_address" id="hp_address" aria-hidden="true" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <label class="block">
+                                        <span class="text-sm font-medium text-gray-700">Full name</span>
+                                        <div class="mt-1 relative rounded-lg">
+                                            <input id="name" name="name" required placeholder="Your full name" aria-label="Full name" class="block w-full pr-10 rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md" />
+                                            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                                <i data-lucide="user" class="w-5 h-5 text-gray-400"></i>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <label class="block">
+                                        <span class="text-sm font-medium text-gray-700">Email</span>
+                                        <div class="mt-1 relative rounded-lg">
+                                            <input id="email" type="email" name="email" required placeholder="you@example.com" aria-label="Email address" class="block w-full pr-10 rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md" />
+                                            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                                <i data-lucide="mail" class="w-5 h-5 text-gray-400"></i>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <label class="block">
+                                    <span class="text-sm font-medium text-gray-700">Subject</span>
+                                    <input id="subject" name="subject" placeholder="Short subject" aria-label="Subject" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md" />
+                                </label>
+
+                                <label class="block">
+                                    <span class="text-sm font-medium text-gray-700">Message</span>
+                                    <textarea id="message" name="message" rows="5" required placeholder="Write your message here..." aria-label="Message" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] focus:shadow-md"></textarea>
+                                </label>
+
+                                <div class="flex items-center gap-4">
+                                    <button type="submit" class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-white" style="background-color: var(--color-accent); color:var(--color-dark)">Send Message</button>
+                                    <button id="mailto-fallback" type="button" class="inline-flex items-center px-4 py-2 rounded-full border font-medium" style="border-color:var(--color-primary); color:var(--color-primary)">Open email</button>
+                                </div>
+
+                                <div id="contact-status" class="text-sm text-green-600 hidden">Message prepared — your email client should open now.</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- 7. Footer -->
