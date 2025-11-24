@@ -680,7 +680,7 @@
         <section id="contact" class="contact-hero py-20 relative" style="background: linear-gradient(135deg, var(--color-primary) 0%, rgba(29,78,216,0.9) 30%, rgba(16,185,129,0.85) 100%);">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 hero-heading">Contact Angaza Tumaini</h2>
-                <p class="text-white max-w-3xl mx-auto">We'd love to hear from you — whether you want to volunteer, partner, donate, or ask a question. Use the form below or send a message directly to <a href="mailto:AngazaTumaini.org@gmail.com" class="underline" style="color:var(--color-accent)">AngazaTumaini.org@gmail.com</a>.</p>
+                <p class="text-white max-w-3xl mx-auto">We'd love to hear from you — whether you want to volunteer, partner, donate, or ask a question. Use the form below or send a message directly to <a href="https://mail.google.com/mail/?view=cm&fs=1&to=AngazaTumaini.org@gmail.com" target="_blank" rel="noopener noreferrer" class="underline" style="color:var(--color-accent)">AngazaTumaini.org@gmail.com</a>.</p>
             </div>
 
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pb-12">
@@ -1110,13 +1110,13 @@
                                 }
                             } catch(err) {
                                 const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
-                                const mailto = `mailto:AngazaTumaini.org@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=AngazaTumaini.org@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
                                 if (statusEl) {
                                     statusEl.classList.remove('hidden');
                                     statusEl.style.color = '#92400E';
-                                    statusEl.textContent = 'Unable to send directly — opening your email client.';
+                                    statusEl.textContent = 'Unable to send directly — opening Gmail compose in a new tab.';
                                 }
-                                window.location.href = mailto;
+                                window.open(gmailUrl, '_blank');
                             }
                         });
 
@@ -1128,8 +1128,8 @@
                                 const email = document.getElementById('email').value.trim();
                                 const message = document.getElementById('message').value.trim();
                                 const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
-                                const mailto = `mailto:AngazaTumaini.org@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-                                window.location.href = mailto;
+                                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=AngazaTumaini.org@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
+                                window.open(gmailUrl, '_blank');
                             });
                         }
                     })();
