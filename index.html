@@ -756,7 +756,6 @@
 
                                 <div class="flex items-center gap-4">
                                     <button type="submit" class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-white" style="background-color: var(--color-accent); color:var(--color-dark)">Send Message</button>
-                                    <button id="mailto-fallback" type="button" class="inline-flex items-center px-4 py-2 rounded-full border font-medium" style="border-color:var(--color-primary); color:var(--color-primary)">Open email</button>
                                 </div>
 
                                 <div id="contact-status" class="text-sm text-green-600 hidden">Message prepared — your email client should open now.</div>
@@ -1130,18 +1129,7 @@
                             }
                         });
 
-                        const mailtoBtn = document.getElementById('mailto-fallback');
-                        if (mailtoBtn) {
-                            mailtoBtn.addEventListener('click', function(){
-                                const subject = document.getElementById('subject').value.trim() || 'Contact from website';
-                                const name = document.getElementById('name').value.trim();
-                                const email = document.getElementById('email').value.trim();
-                                const message = document.getElementById('message').value.trim();
-                                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
-                                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=AngazaTumaini.org@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
-                                window.open(gmailUrl, '_blank');
-                            });
-                        }
+                        // 'Open email' fallback button removed — the form submission handles fallback to Gmail compose when necessary.
                     })();
                 }
             })();
