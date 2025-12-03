@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /filez/
+
 Sitemap: https://angaza-tumaini.vercel.app/sitemap.xml
+
+# Crawl delay (optional, in seconds)
+Crawl-delay: 1
