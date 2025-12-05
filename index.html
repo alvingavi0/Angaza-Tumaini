@@ -1106,6 +1106,12 @@
             function closeModal() {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
+                // Pause video when closing modal
+                const video = modal.querySelector('video');
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
                 openBtn.focus();
             }
 
