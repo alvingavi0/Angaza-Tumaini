@@ -50,9 +50,11 @@
 
         #hero-section {
             background-color: var(--color-dark);
-            background-image: radial-gradient(at 0% 0%, var(--color-primary) 0%, transparent 50%),
-                              radial-gradient(at 100% 100%, var(--color-secondary) 0%, transparent 50%);
+            background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('filez/Impact.jpg'), radial-gradient(at 0% 0%, var(--color-primary) 0%, transparent 50%), radial-gradient(at 100% 100%, var(--color-secondary) 0%, transparent 50%);
+            background-size: cover, cover, cover, cover;
+            background-position: center center, center center, center center, center center;
             min-height: 60vh;
+            position: relative;
         }
 
         .hero-overlay {
