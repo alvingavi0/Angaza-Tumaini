@@ -17,8 +17,8 @@
             --color-dark: #1F2937;
         }
         body { font-family: 'Inter', sans-serif; }
-        .scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s; }
-        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+        .scroll-reveal { opacity: 0; transform: translateY(30px) scale(0.95); transition: opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
         #hero-section { background-color: var(--color-dark); background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('filez/Get Involved.jpg'); background-size: cover, cover; background-position: center center, center center; background-attachment: fixed; min-height: 60vh; position: relative; }
         .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.15) 100%); z-index: 1; }
         .hero-content { position: absolute; z-index: 10; bottom: 0; left: 0; width: auto; max-width: 550px; padding: 2rem 2rem 3rem 2rem; }
