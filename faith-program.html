@@ -315,51 +315,22 @@
                     </div>
                 </div>
 
-                <!-- Video Player (intro + playlist) -->
-                <div class="mb-12 scroll-reveal">
-                    <div class="rounded-lg overflow-hidden bg-black aspect-video relative">
-                        <video id="faith-video" controls playsinline class="w-full h-full bg-black" poster="filez/FAITH/1Q2A0193.jpg">
+                <!-- Videos Section -->
+                <div class="space-y-8 scroll-reveal">
+                    <div class="bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+                        <video controls preload="metadata" class="w-full" style="aspect-ratio: 16/9;">
                             <source src="filez/FAITH/lv_0_20251209134839.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between space-x-3">
-                            <div id="video-thumbs" class="flex gap-2">
-                                <button data-src="filez/FAITH/lv_0_20251209134839.mp4" class="faith-thumb w-20 h-12 rounded-md overflow-hidden border-2 border-transparent focus:outline-none" aria-label="Play intro video">
-                                    <img src="filez/FAITH/1Q2A0193.jpg" alt="Intro thumbnail" class="w-full h-full object-cover">
-                                </button>
-                                <button data-src="filez/FAITH/lv_0_20251209140322.mp4" class="faith-thumb w-20 h-12 rounded-md overflow-hidden border-2 border-transparent focus:outline-none" aria-label="Play second video">
-                                    <img src="filez/FAITH/1Q2A0194.jpg" alt="Second thumbnail" class="w-full h-full object-cover">
-                                </button>
-                            </div>
-                            <button id="play-pause" class="px-3 py-1 rounded bg-white/10 text-white text-sm">Play</button>
-                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-200 rounded-lg overflow-hidden shadow-lg">
+                        <video controls preload="metadata" class="w-full" style="aspect-ratio: 16/9;">
+                            <source src="filez/FAITH/lv_0_20251209140322.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
-                <script>
-                    (function(){
-                        const video = document.getElementById('faith-video');
-                        const thumbs = document.querySelectorAll('.faith-thumb');
-                        const playBtn = document.getElementById('play-pause');
-                        thumbs.forEach(t => {
-                            t.addEventListener('click', () => {
-                                const src = t.getAttribute('data-src');
-                                const sourceEl = video.querySelector('source');
-                                if (!sourceEl.src || !sourceEl.src.includes(src)) {
-                                    video.pause();
-                                    sourceEl.src = src;
-                                    video.load();
-                                }
-                                video.play();
-                                thumbs.forEach(x => x.style.borderColor = 'transparent');
-                                t.style.borderColor = '#FBBF24';
-                                playBtn.textContent = 'Pause';
-                            });
-                        });
-                        playBtn.addEventListener('click', () => {
-                            if (video.paused) { video.play(); playBtn.textContent = 'Pause'; } else { video.pause(); playBtn.textContent = 'Play'; }
-                        });
-                    })();
-                </script>
             </div>
         </section>
 
