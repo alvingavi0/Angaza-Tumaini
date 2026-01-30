@@ -298,7 +298,7 @@
 
                 <!-- Video Testimony: Joram -->
                 <div class="mt-4">
-                    <video controls preload="metadata" playsinline class="w-full rounded-md shadow-md" aria-label="Video testimony from Joram" poster="filez/Joram.jpg">
+                    <video id="joram-video" controls preload="metadata" playsinline class="w-full rounded-md shadow-md" aria-label="Video testimony from Joram" poster="filez/Joram.jpg">
                         <source src="filez/joram.mp4" type="video/mp4">
                         Your browser does not support the video tag. You can <a href="filez/joram.mp4">download the video</a> instead.
                     </video>
@@ -393,31 +393,38 @@
 
     <script>
         // Joram modal functionality
-        const joramModal = document.getElementById('joram-modal');
-        const joramBtn = document.getElementById('joram-learnmore-btn');
-        const joramCloseBtn = document.getElementById('joram-modal-close');
-        const joramClosBtn2 = document.getElementById('joram-modal-close-2');
-        const joramVideo = joramModal.querySelector('video');
-
-        joramBtn.addEventListener('click', () => {
-            joramModal.classList.remove('hidden');
-            joramModal.classList.add('flex');
-            joramVideo.play();
-        });
-
-        const closeJoramModal = () => {
-            joramModal.classList.add('hidden');
-            joramModal.classList.remove('flex');
-            joramVideo.pause();
-            joramVideo.currentTime = 0;
-        };
-
-        joramCloseBtn.addEventListener('click', closeJoramModal);
-        joramClosBtn2.addEventListener('click', closeJoramModal);
-        document.getElementById('joram-modal-overlay').addEventListener('click', closeJoramModal);
-
-        // Page Transition Effects - Modern Circular Reveal
         document.addEventListener('DOMContentLoaded', () => {
+            const joramModal = document.getElementById('joram-modal');
+            const joramBtn = document.getElementById('joram-learnmore-btn');
+            const joramCloseBtn = document.getElementById('joram-modal-close');
+            const joramCloseBtn2 = document.getElementById('joram-modal-close-2');
+            const joramVideo = document.getElementById('joram-video');
+            const joramOverlay = document.getElementById('joram-modal-overlay');
+
+            if (joramBtn && joramModal) {
+                joramBtn.addEventListener('click', () => {
+                    joramModal.classList.remove('hidden');
+                    joramModal.classList.add('flex');
+                    if (joramVideo) {
+                        joramVideo.play().catch(err => console.log('Video play error:', err));
+                    }
+                });
+            }
+
+            const closeJoramModal = () => {
+                joramModal.classList.add('hidden');
+                joramModal.classList.remove('flex');
+                if (joramVideo) {
+                    joramVideo.pause();
+                    joramVideo.currentTime = 0;
+                }
+            };
+
+            if (joramCloseBtn) joramCloseBtn.addEventListener('click', closeJoramModal);
+            if (joramCloseBtn2) joramCloseBtn2.addEventListener('click', closeJoramModal);
+            if (joramOverlay) joramOverlay.addEventListener('click', closeJoramModal);
+
+            // Page Transition Effects
             document.body.classList.add('page-entering');
             
             // Handle all navigation links universally
@@ -444,10 +451,5 @@
                         }, 400);
                     });
                 }
-            });
-        });
-                        window.location.href = href;
-                    }, 400);
-                });
             });
         });
