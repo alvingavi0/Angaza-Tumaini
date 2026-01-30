@@ -282,7 +282,7 @@
 
     <footer class="bg-gray-900 text-gray-400 py-12">
     <!-- Joram Modal -->
-    <div id="joram-modal" class="fixed inset-0 z-50 hidden items-center justify-center">
+    <div id="joram-modal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center">
         <!-- overlay -->
         <div id="joram-modal-overlay" class="absolute inset-0 bg-black/50"></div>
 
@@ -404,16 +404,16 @@
             if (joramBtn && joramModal) {
                 joramBtn.addEventListener('click', () => {
                     joramModal.classList.remove('hidden');
-                    joramModal.classList.add('flex');
                     if (joramVideo) {
-                        joramVideo.play().catch(err => console.log('Video play error:', err));
+                        setTimeout(() => {
+                            joramVideo.play().catch(err => console.log('Video play error:', err));
+                        }, 100);
                     }
                 });
             }
 
             const closeJoramModal = () => {
                 joramModal.classList.add('hidden');
-                joramModal.classList.remove('flex');
                 if (joramVideo) {
                     joramVideo.pause();
                     joramVideo.currentTime = 0;
