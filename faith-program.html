@@ -494,30 +494,34 @@
         //     });
         // });
 
-        // Page Transition Effects - Modern Circular Reveal
+        // Page Transition Effects - Premium Fade + Scale
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('page-entering');
             
-            // Add transition overlay to all navigation links
-            document.querySelectorAll('a[href$=".html"]').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    const href = link.getAttribute('href');
-                    if (window.location.pathname.includes(href.split('/').pop())) {
-                        return;
-                    }
-                    e.preventDefault();
-                    
-                    document.body.classList.add('page-leaving');
-                    document.body.classList.remove('page-entering');
-                    
-                    const overlay = document.createElement('div');
-                    overlay.className = 'page-transition';
-                    document.body.appendChild(overlay);
-                    
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 400);
-                });
+            // Handle all navigation links universally
+            document.querySelectorAll('a[href]').forEach(link => {
+                const href = link.getAttribute('href');
+                // Trigger transition for HTML files (not anchors, external links, etc.)
+                if (href && href.endsWith('.html')) {
+                    link.addEventListener('click', (e) => {
+                        // Skip if it's the current page
+                        if (window.location.pathname.includes(href.split('/').pop())) {
+                            return;
+                        }
+                        e.preventDefault();
+                        
+                        document.body.classList.add('page-leaving');
+                        document.body.classList.remove('page-entering');
+                        
+                        const overlay = document.createElement('div');
+                        overlay.className = 'page-transition';
+                        document.body.appendChild(overlay);
+                        
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 400);
+                    });
+                }
             });
         });
     </script>
