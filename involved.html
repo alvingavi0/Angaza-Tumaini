@@ -213,7 +213,7 @@
             });
         });
 
-        // Page Transition Effects - Modern Circular Reveal
+        // Page Transition Effects - Premium Fade + Scale
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('page-entering');
             document.querySelectorAll('a[href$=".html"]').forEach(link => {
@@ -230,6 +230,7 @@
                     const overlay = document.createElement('div');
                     overlay.className = 'page-transition';
                     document.body.appendChild(overlay);
+                    
                     setTimeout(() => {
                         window.location.href = href;
                     }, 400);
