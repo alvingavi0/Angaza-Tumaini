@@ -210,8 +210,8 @@
                         <div class="joram-modal-bubble bg-white dark:bg-dark shadow-2xl rounded-2xl max-w-lg w-full p-6 relative">
                             <button onclick="document.getElementById('mama-joram-modal').classList.add('hidden'); document.getElementById('mama-joram-modal-video').pause();" class="absolute top-2 right-2 text-gray-400 hover:text-primary text-2xl font-bold">&times;</button>
                             <h3 class="text-xl font-bold mb-4 text-primary">Mama Joram - Parent Testimonial</h3>
-                            <video id="mama-joram-modal-video" class="w-full rounded-lg" controls poster="https://placehold.co/320x180?text=Testimonial">
-                                <source src="filez/testimonial.mp4" type="video/mp4">
+                            <video id="mama-joram-modal-video" class="w-full rounded-lg" controls playsinline preload="auto" style="background: #000;">
+                                <source src="/filez/testimonial.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -298,9 +298,15 @@
 
                 <!-- Video Testimony: Joram -->
                 <div class="mt-4">
-                    <video id="joram-video" controls preload="metadata" playsinline class="w-full rounded-md shadow-md" aria-label="Video testimony from Joram" poster="filez/Joram.jpg">
-                        <source src="filez/joram.mp4" type="video/mp4">
-                        Your browser does not support the video tag. You can <a href="filez/joram.mp4">download the video</a> instead.
+                    <video id="joram-video" 
+                        controls 
+                        playsinline 
+                        preload="auto" 
+                        class="w-full rounded-md shadow-md" 
+                        style="background: #000;"
+                        poster="filez/Joram.jpg">
+                        <source src="/filez/joram.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                 </div>
 
