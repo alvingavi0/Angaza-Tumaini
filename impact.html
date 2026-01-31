@@ -182,7 +182,7 @@
                         <!-- Content overlay -->
                         <div class="content-overlay">
                             <div class="w-full flex items-center justify-center md:justify-end">
-                                <button onclick="document.getElementById('joram-modal').style.display='flex'; document.getElementById('joram-video-player').play();" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
+                                <button onclick="document.getElementById('joram-modal').style.display='flex'; document.getElementById('joram-video-player').play().catch(e => console.log('Play error:', e));" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
                                     Learn More
                                 </button>
                             </div>
@@ -198,30 +198,12 @@
                         <!-- Content overlay -->
                         <div class="content-overlay">
                             <div class="w-full flex items-center justify-center md:justify-end">
-                                <button onclick="document.getElementById('mama-joram-modal').style.display='flex'; document.getElementById('mama-joram-video-player').play();" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
+                                <button onclick="document.getElementById('mama-joram-modal').style.display='flex'; document.getElementById('mama-joram-video-player').play().catch(e => console.log('Play error:', e));" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
                                     Watch Testimonial
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <!-- Modal for Mama Joram video -->
-                    <div id="mama-joram-modal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center">
-                        <div class="joram-modal-bubble bg-white dark:bg-dark shadow-2xl rounded-2xl max-w-lg w-full p-6 relative">
-                            <button onclick="document.getElementById('mama-joram-modal').classList.add('hidden'); document.getElementById('mama-joram-modal-video').pause();" class="absolute top-2 right-2 text-gray-400 hover:text-primary text-2xl font-bold">&times;</button>
-                            <h3 class="text-xl font-bold mb-4 text-primary">Mama Joram - Parent Testimonial</h3>
-                            <video id="mama-joram-modal-video" class="w-full rounded-lg" controls playsinline preload="auto" style="background: #000;">
-                                <source src="/filez/testimonial.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                    <script>
-                    // Modal open/close logic for Mama Joram testimonial
-                    document.getElementById('mama-joram-learnmore-btn').onclick = function() {
-                        document.getElementById('mama-joram-modal').classList.remove('hidden');
-                        document.getElementById('mama-joram-modal-video').play();
-                    };
-                    </script>
                 </div>
 
                 <!-- Additional Impact Stories -->
@@ -280,9 +262,9 @@
     </main>
 
     <!-- Joram Modal -->
-    <div id="joram-modal" class="fixed inset-0 z-50 hidden items-center justify-center" style="display: none; background-color: rgba(0,0,0,0.7);">
+    <div id="joram-modal" class="fixed inset-0 z-50 items-center justify-center" style="display: none; background-color: rgba(0,0,0,0.7);">
         <div role="dialog" aria-modal="true" class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8">
-            <button onclick="document.getElementById('joram-modal').style.display='none'; document.getElementById('joram-video-player').pause(); document.getElementById('joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+            <button onclick="event.stopPropagation(); document.getElementById('joram-modal').style.display='none'; document.getElementById('joram-video-player').pause(); document.getElementById('joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
             <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Story from Joram</h3>
             <video id="joram-video-player" controls playsinline preload="auto" class="w-full rounded-lg shadow-md" style="background: #000;">
                 <source src="/filez/joram.mp4" type="video/mp4">
@@ -296,9 +278,9 @@
     </div>
 
     <!-- Mama Joram Modal -->
-    <div id="mama-joram-modal" class="fixed inset-0 z-50 hidden items-center justify-center" style="display: none; background-color: rgba(0,0,0,0.7);">
+    <div id="mama-joram-modal" class="fixed inset-0 z-50 items-center justify-center" style="display: none; background-color: rgba(0,0,0,0.7);">
         <div role="dialog" aria-modal="true" class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8">
-            <button onclick="document.getElementById('mama-joram-modal').style.display='none'; document.getElementById('mama-joram-video-player').pause(); document.getElementById('mama-joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+            <button onclick="event.stopPropagation(); document.getElementById('mama-joram-modal').style.display='none'; document.getElementById('mama-joram-video-player').pause(); document.getElementById('mama-joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
             <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Mama Joram - Parent Testimonial</h3>
             <video id="mama-joram-video-player" controls playsinline preload="auto" class="w-full rounded-lg shadow-md" style="background: #000;">
                 <source src="/filez/testimonial.mp4" type="video/mp4">
