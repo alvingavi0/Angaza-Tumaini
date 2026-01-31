@@ -101,8 +101,7 @@
         }
 
         .joram-modal-bubble .joram-modal-content { padding: 1.25rem 1.5rem; }
-    </style>
-</head>
+    </style></head>
 <body class="bg-gray-50">
     <header class="sticky top-0 z-50 bg-white shadow-lg">
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-24">
@@ -183,7 +182,7 @@
                         <!-- Content overlay -->
                         <div class="content-overlay">
                             <div class="w-full flex items-center justify-center md:justify-end">
-                                <button id="joram-learnmore-btn" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
+                                <button onclick="document.getElementById('joram-modal').style.display='flex'; document.getElementById('joram-video-player').play();" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
                                     Learn More
                                 </button>
                             </div>
@@ -199,7 +198,7 @@
                         <!-- Content overlay -->
                         <div class="content-overlay">
                             <div class="w-full flex items-center justify-center md:justify-end">
-                                <button id="mama-joram-learnmore-btn" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
+                                <button onclick="document.getElementById('mama-joram-modal').style.display='flex'; document.getElementById('mama-joram-video-player').play();" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
                                     Watch Testimonial
                                 </button>
                             </div>
@@ -280,46 +279,31 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-12">
     <!-- Joram Modal -->
-    <div id="joram-modal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center">
-        <!-- overlay -->
-        <div id="joram-modal-overlay" class="absolute inset-0 bg-black/50"></div>
-
-        <!-- dialog -->
-        <div role="dialog" aria-modal="true" class="relative bg-white joram-modal-bubble shadow-xl max-w-xl w-full mx-6 sm:mx-0 z-50">
-            <div class="joram-modal-content p-6 sm:p-10">
-                <div class="flex justify-between items-start">
-                    <h3 class="text-2xl font-extrabold text-gray-900">Story from Joram</h3>
-                    <button id="joram-modal-close" aria-label="Close" class="text-gray-500 hover:text-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
-                </div>
-
-                <!-- Video Testimony: Joram -->
-                <div class="mt-4">
-                    <video id="joram-video" 
-                        controls 
-                        playsinline 
-                        preload="auto" 
-                        class="w-full rounded-md shadow-md" 
-                        style="background: #000;"
-                        poster="filez/Joram.jpg">
-                        <source src="/filez/joram.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-
-                <div class="mt-4 text-gray-800 text-lg leading-relaxed">
-                    "Before joining the FAITH program, I didn't know what it meant to truly trust God. Through Angaza Tumaini, I've grown in my faith and found a new sense of purpose."
-                </div>
-
-                <div class="mt-4 text-sm text-gray-600">By Joram Agan Odero</div>
-
-                <div class="mt-6 text-right">
-                    <button id="joram-modal-close-2" class="py-2 px-4 rounded-full font-semibold" style="background-color:var(--color-primary); color:white;">Close</button>
-                </div>
+    <div id="joram-modal" class="fixed inset-0 z-50 hidden items-center justify-center" style="display: none; background-color: rgba(0,0,0,0.7);">
+        <div role="dialog" aria-modal="true" class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8">
+            <button onclick="document.getElementById('joram-modal').style.display='none'; document.getElementById('joram-video-player').pause(); document.getElementById('joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Story from Joram</h3>
+            <video id="joram-video-player" controls playsinline preload="auto" class="w-full rounded-lg shadow-md" style="background: #000;">
+                <source src="/filez/joram.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="mt-6 text-gray-800 text-lg leading-relaxed">
+                "Before joining the FAITH program, I didn't know what it meant to truly trust God. Through Angaza Tumaini, I've grown in my faith and found a new sense of purpose."
             </div>
+            <div class="mt-4 text-sm text-gray-600">By Joram Agan Odero</div>
+        </div>
+    </div>
+
+    <!-- Mama Joram Modal -->
+    <div id="mama-joram-modal" class="fixed inset-0 z-50 hidden items-center justify-center" style="display: none; background-color: rgba(0,0,0,0.7);">
+        <div role="dialog" aria-modal="true" class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8">
+            <button onclick="document.getElementById('mama-joram-modal').style.display='none'; document.getElementById('mama-joram-video-player').pause(); document.getElementById('mama-joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Mama Joram - Parent Testimonial</h3>
+            <video id="mama-joram-video-player" controls playsinline preload="auto" class="w-full rounded-lg shadow-md" style="background: #000;">
+                <source src="/filez/testimonial.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
@@ -395,41 +379,8 @@
                 if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
             });
         });
-    </script>
 
-    <script>
-        // Joram modal functionality
         document.addEventListener('DOMContentLoaded', () => {
-            const joramModal = document.getElementById('joram-modal');
-            const joramBtn = document.getElementById('joram-learnmore-btn');
-            const joramCloseBtn = document.getElementById('joram-modal-close');
-            const joramCloseBtn2 = document.getElementById('joram-modal-close-2');
-            const joramVideo = document.getElementById('joram-video');
-            const joramOverlay = document.getElementById('joram-modal-overlay');
-
-            if (joramBtn && joramModal) {
-                joramBtn.addEventListener('click', () => {
-                    joramModal.classList.remove('hidden');
-                    if (joramVideo) {
-                        setTimeout(() => {
-                            joramVideo.play().catch(err => console.log('Video play error:', err));
-                        }, 100);
-                    }
-                });
-            }
-
-            const closeJoramModal = () => {
-                joramModal.classList.add('hidden');
-                if (joramVideo) {
-                    joramVideo.pause();
-                    joramVideo.currentTime = 0;
-                }
-            };
-
-            if (joramCloseBtn) joramCloseBtn.addEventListener('click', closeJoramModal);
-            if (joramCloseBtn2) joramCloseBtn2.addEventListener('click', closeJoramModal);
-            if (joramOverlay) joramOverlay.addEventListener('click', closeJoramModal);
-
             // Page Transition Effects
             document.body.classList.add('page-entering');
             
@@ -458,4 +409,20 @@
                     });
                 }
             });
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', (e) => {
+            const joramModal = document.getElementById('joram-modal');
+            const mamaJoramModal = document.getElementById('mama-joram-modal');
+            if (e.target === joramModal) {
+                joramModal.style.display = 'none';
+                document.getElementById('joram-video-player').pause();
+                document.getElementById('joram-video-player').currentTime = 0;
+            }
+            if (e.target === mamaJoramModal) {
+                mamaJoramModal.style.display = 'none';
+                document.getElementById('mama-joram-video-player').pause();
+                document.getElementById('mama-joram-video-player').currentTime = 0;
+            }
         });
