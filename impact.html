@@ -182,7 +182,7 @@
                         <!-- Content overlay -->
                         <div class="content-overlay">
                             <div class="w-full flex items-center justify-center md:justify-end">
-                                <button onclick="document.getElementById('joram-modal').style.display='flex'; document.getElementById('joram-video-player').play().catch(e => console.log('Play error:', e));" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
+                                <button onclick="const modal = document.getElementById('joram-modal'); const vid = document.getElementById('joram-video-player'); modal.style.display='flex'; console.log('Video src:', vid.querySelector('source').src); vid.play().catch(e => console.error('Play failed:', e));" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
                                     Learn More
                                 </button>
                             </div>
@@ -198,7 +198,7 @@
                         <!-- Content overlay -->
                         <div class="content-overlay">
                             <div class="w-full flex items-center justify-center md:justify-end">
-                                <button onclick="document.getElementById('mama-joram-modal').style.display='flex'; document.getElementById('mama-joram-video-player').play().catch(e => console.log('Play error:', e));" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
+                                <button onclick="const modal = document.getElementById('mama-joram-modal'); const vid = document.getElementById('mama-joram-video-player'); modal.style.display='flex'; console.log('Video src:', vid.querySelector('source').src); vid.play().catch(e => console.error('Play failed:', e));" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
                                     Watch Testimonial
                                 </button>
                             </div>
@@ -266,8 +266,8 @@
         <div role="dialog" aria-modal="true" class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8">
             <button onclick="event.stopPropagation(); document.getElementById('joram-modal').style.display='none'; document.getElementById('joram-video-player').pause(); document.getElementById('joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
             <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Story from Joram</h3>
-            <video id="joram-video-player" controls playsinline preload="auto" class="w-full rounded-lg shadow-md" style="background: #000;">
-                <source src="/filez/joram.mp4" type="video/mp4">
+            <video id="joram-video-player" controls playsinline preload="metadata" class="w-full rounded-lg shadow-md" style="background: #000;" crossorigin="anonymous">
+                <source src="filez/joram.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="mt-6 text-gray-800 text-lg leading-relaxed">
@@ -282,8 +282,8 @@
         <div role="dialog" aria-modal="true" class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8">
             <button onclick="event.stopPropagation(); document.getElementById('mama-joram-modal').style.display='none'; document.getElementById('mama-joram-video-player').pause(); document.getElementById('mama-joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
             <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Mama Joram - Parent Testimonial</h3>
-            <video id="mama-joram-video-player" controls playsinline preload="auto" class="w-full rounded-lg shadow-md" style="background: #000;">
-                <source src="/filez/testimonial.mp4" type="video/mp4">
+            <video id="mama-joram-video-player" controls playsinline preload="metadata" class="w-full rounded-lg shadow-md" style="background: #000;" crossorigin="anonymous">
+                <source src="filez/testimonial.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
