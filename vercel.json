@@ -5,7 +5,7 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/filez/*.mp4",
+      "source": "/filez/(.*).mp4",
       "headers": [
         {
           "key": "Content-Type",
