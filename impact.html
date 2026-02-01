@@ -198,7 +198,7 @@
                         <!-- Content overlay -->
                         <div class="content-overlay">
                             <div class="w-full flex items-center justify-center md:justify-end">
-                                <button onclick="const modal = document.getElementById('mama-joram-modal'); const vid = document.getElementById('mama-joram-video-player'); modal.style.display='flex'; console.log('Video src:', vid.querySelector('source').src); vid.play().catch(e => console.error('Play failed:', e));" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
+                                <button onclick="(function(){const modal=document.getElementById('mama-joram-modal');const iframe=document.getElementById('mama-joram-iframe'); iframe.src='https://www.youtube.com/embed/92rZi1jqmis?autoplay=1&rel=0&modestbranding=1'; modal.style.display='flex'; console.log('Loaded iframe src:', iframe.src);})();" class="joram-btn py-2 px-4 rounded-full font-semibold shadow-md transition transform hover:scale-105 text-sm">
                                     Watch Testimonial
                                 </button>
                             </div>
@@ -279,12 +279,11 @@
     <!-- Mama Joram Modal -->
     <div id="mama-joram-modal" class="fixed inset-0 z-50 items-center justify-center" style="display: none; background-color: rgba(0,0,0,0.7);">
         <div role="dialog" aria-modal="true" class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 p-8">
-            <button onclick="event.stopPropagation(); document.getElementById('mama-joram-modal').style.display='none'; document.getElementById('mama-joram-video-player').pause(); document.getElementById('mama-joram-video-player').currentTime=0;" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+            <button onclick="event.stopPropagation(); const iframe=document.getElementById('mama-joram-iframe'); if(iframe) iframe.src=''; document.getElementById('mama-joram-modal').style.display='none';" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
             <h3 class="text-2xl font-extrabold text-gray-900 mb-6">Mama Joram - Parent Testimonial</h3>
-            <video id="mama-joram-video-player" controls playsinline preload="metadata" class="w-full rounded-lg shadow-md" style="background: #000;" crossorigin="anonymous">
-                <source src="filez/testimonial.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div style="position:relative;padding-top:56.25%;" class="w-full rounded-lg overflow-hidden shadow-md">
+                <iframe id="mama-joram-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+            </div>
         </div>
     </div>
 
