@@ -492,6 +492,7 @@
             if (current === -1) current = 0;
 
             const showSlide = (idx) => {
+                console.log('showSlide called with index:', idx);
                 slides.forEach((s, i) => {
                     // Use inline styles to force opacity/z-index changes reliably
                     if (i === idx) {
@@ -501,6 +502,8 @@
                         s.style.opacity = '0';
                         s.style.zIndex = '0';
                     }
+                    // Log each slide's computed inline opacity for debugging
+                    console.log(' slide', i, '-> inline opacity:', s.style.opacity, 'zIndex:', s.style.zIndex);
                 });
             };
 
