@@ -493,10 +493,13 @@
 
             const showSlide = (idx) => {
                 slides.forEach((s, i) => {
+                    // Use inline styles to force opacity/z-index changes reliably
                     if (i === idx) {
-                        s.classList.add('active');
+                        s.style.opacity = '1';
+                        s.style.zIndex = '1';
                     } else {
-                        s.classList.remove('active');
+                        s.style.opacity = '0';
+                        s.style.zIndex = '0';
                     }
                 });
             };
