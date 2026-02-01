@@ -482,16 +482,37 @@
             });
         }
 
-        // Hero Slideshow Rotation
-        (function() {
-            const slides = document.querySelectorAll('.hero-slide');
-            let currentSlide = 0;
-            setInterval(() => {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
+        // Hero Slideshow Rotation (initialize after DOM is ready)
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = Array.from(document.querySelectorAll('.hero-slide'));
+            if (!slides || slides.length <= 1) return;
+
+            let current = slides.findIndex(s => s.classList.contains('active'));
+            if (current === -1) current = 0;
+
+            const showSlide = (idx) => {
+                slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+            };
+
+            // Start interval with safe guards
+            let interval = setInterval(() => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
             }, 5000);
-        })();
+
+            // Pause when page is hidden to avoid skipped frames
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    clearInterval(interval);
+                } else {
+                    // restart
+                    interval = setInterval(() => {
+                        current = (current + 1) % slides.length;
+                        showSlide(current);
+                    }, 5000);
+                }
+            });
+        });
 
         // Scroll reveal animation disabled - content loads immediately
         // const revealElements = document.querySelectorAll('.scroll-reveal');
