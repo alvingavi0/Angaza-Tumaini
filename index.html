@@ -494,7 +494,16 @@
                 slides.forEach((s, i) => s.classList.toggle('active', i === idx));
             };
 
-            // Start interval with safe guards
+            // Ensure the current slide is shown immediately
+            showSlide(current);
+
+            // Force an initial advance shortly after load so users see movement
+            setTimeout(() => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }, 3000);
+
+            // Start interval with safe guards (runs after initial advance)
             let interval = setInterval(() => {
                 current = (current + 1) % slides.length;
                 showSlide(current);
@@ -505,7 +514,8 @@
                 if (document.hidden) {
                     clearInterval(interval);
                 } else {
-                    // restart
+                    // restart (avoid double intervals)
+                    clearInterval(interval);
                     interval = setInterval(() => {
                         current = (current + 1) % slides.length;
                         showSlide(current);
