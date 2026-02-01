@@ -481,24 +481,35 @@
         }
 
         // Hero Slideshow Rotation (initialize after DOM is ready)
-        document.addEventListener('DOMContentLoaded', () => {
+        function initHeroSlideshow() {
             const slides = Array.from(document.querySelectorAll('.hero-slide'));
-            if (!slides || slides.length <= 1) return;
+            if (!slides || slides.length <= 1) {
+                console.warn('Hero slideshow: No slides found or only 1 slide');
+                return;
+            }
 
             let current = slides.findIndex(s => s.classList.contains('active'));
             if (current === -1) current = 0;
 
             const showSlide = (idx) => {
-                slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+                slides.forEach((s, i) => {
+                    if (i === idx) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
             };
 
             // Ensure the current slide is shown immediately
             showSlide(current);
+            console.log('Hero slideshow initialized with ' + slides.length + ' slides');
 
             // Force an initial advance shortly after load so users see movement
             setTimeout(() => {
                 current = (current + 1) % slides.length;
                 showSlide(current);
+                console.log('Advanced to slide ' + current);
             }, 3000);
 
             // Start interval with safe guards (runs after initial advance)
@@ -512,7 +523,6 @@
                 if (document.hidden) {
                     clearInterval(interval);
                 } else {
-                    // restart (avoid double intervals)
                     clearInterval(interval);
                     interval = setInterval(() => {
                         current = (current + 1) % slides.length;
@@ -520,7 +530,14 @@
                     }, 5000);
                 }
             });
-        });
+        }
+
+        // Try to init immediately if DOM is ready, otherwise wait for DOMContentLoaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initHeroSlideshow);
+        } else {
+            initHeroSlideshow();
+        }
 
         // Scroll reveal animation disabled - content loads immediately
         // const revealElements = document.querySelectorAll('.scroll-reveal');
