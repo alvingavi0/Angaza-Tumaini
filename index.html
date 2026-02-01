@@ -60,6 +60,9 @@
             background-image: radial-gradient(at 0% 0%, var(--color-primary) 0%, transparent 50%),
                               radial-gradient(at 100% 100%, var(--color-secondary) 0%, transparent 50%);
             min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-slider {
@@ -95,14 +98,15 @@
         }
 
         .hero-content {
-            position: absolute;
+            position: relative;
             z-index: 10;
-            top: 28%;
-            left: 45%;
-            transform: translate(-50%, -50%);
-            width: auto;
-            max-width: 700px;
-            padding: 2rem 2rem 2rem 2rem;
+            width: 100%;
+            max-width: 900px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
 
