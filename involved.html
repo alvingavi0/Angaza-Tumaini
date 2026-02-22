@@ -16,7 +16,28 @@
             --color-accent: #FBBF24;
             --color-dark: #1F2937;
         }
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: var(--color-primary);
+            font-weight: 700;
+            transition: color 0.3s ease;
+            padding-bottom: 8px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color-accent);
+            transition: width 0.3s ease-out;
+            border-radius: 9999px;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover { color: var(--color-dark); }
         .scroll-reveal { opacity: 1; transform: translateY(0) scale(1); transition: none; }
         .scroll-reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
         
@@ -73,12 +94,12 @@
         <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-24">
             <a href="index.html"><img src="filez/logo/IMG-20251012-WA0003.jpg" alt="Logo" class="h-24 w-auto"></a>
             <nav class="hidden md:flex space-x-8 font-medium">
-                <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
-                <a href="about.html" class="text-gray-800 hover:text-blue-600">About</a>
-                <a href="programs.html" class="text-gray-800 hover:text-blue-600">Programs</a>
-                <a href="impact.html" class="text-gray-800 hover:text-blue-600">Impact</a>
-                <a href="involved.html" style="color: var(--color-primary); font-weight: 700;">Get Involved</a>
-                <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="programs.html" class="nav-link">Programs</a>
+                <a href="impact.html" class="nav-link">Impact</a>
+                <a href="involved.html" class="nav-link" aria-current="page">Get Involved</a>
+                <a href="contact.html" class="nav-link">Contact</a>
                 <a href="involved.html" class="py-3 px-6 rounded-full font-bold" style="background-color: var(--color-accent); color: var(--color-dark);">GIVE HOPE</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
