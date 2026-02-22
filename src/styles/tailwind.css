@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS for Angaza Tumaini */
+:root {
+    --color-primary: #1D4ED8;
+    --color-secondary: #10B981;
+    --color-accent: #FBBF24;
+    --color-dark: #1F2937;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}

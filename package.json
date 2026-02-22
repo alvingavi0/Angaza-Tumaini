@@ -1,0 +1,15 @@
+{
+  "name": "angaza-tumaini",
+  "version": "1.0.0",
+  "description": "Angaza Tumaini Mission Center website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css",
+    "watch:css": "tailwindcss -i ./src/styles/tailwind.css -o ./assets/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.32",
+    "autoprefixer": "^10.4.17"
+  },
+  "private": true
+}
